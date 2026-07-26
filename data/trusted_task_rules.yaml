@@ -18,6 +18,7 @@ rule_data:
 
     allow:
       konflux-defaults:
+        - pattern: oci://quay.io/konflux-ci/tekton-catalog/task-*
         - pattern: oci://quay.io/konflux-ci/integration-service-catalog/*
 
         # Conforma's trusted task checks can work with git resolved tasks, but
