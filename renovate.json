@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "customManagers": [
+    {
+      "description": "Track Conforma CLI release used by validate-data workflow",
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^\\.github/workflows/.*\\.ya?ml$/"
+      ],
+      "matchStringsStrategy": "combination",
+      "matchStrings": [
+        "# renovate: datasource=github-releases depName=conforma/cli",
+        "EC_VERSION:\\s*(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "conforma/cli",
+      "extractVersionTemplate": "^v(?<version>\\d+\\.\\d+\\.\\d+)$"
+    }
+  ]
+}

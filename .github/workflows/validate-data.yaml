@@ -6,13 +6,15 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    env:
+      # renovate: datasource=github-releases depName=conforma/cli
+      EC_VERSION: 0.9.73
     steps:
       - uses: actions/checkout@v7
 
       - name: Install Conforma CLI
         run: |
-          # TODO: pin to a specific version
-          curl -sLO https://github.com/conforma/cli/releases/latest/download/ec_linux_amd64
+          curl -sLO "https://github.com/conforma/cli/releases/download/v${EC_VERSION}/ec_linux_amd64"
           chmod 755 ec_linux_amd64
           sudo mv ec_linux_amd64 /usr/local/bin/ec
           ec version
