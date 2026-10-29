@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # renovate: datasource=github-releases depName=conforma/cli
-      EC_VERSION: 0.10.42
+      EC_VERSION: 0.10.48
     steps:
       - uses: actions/checkout@v7
 
