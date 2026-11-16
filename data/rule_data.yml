@@ -5,10 +5,6 @@ rule_data:
   - registry.access.redhat.com/
   - registry.redhat.io/
 
-  # Number of days before a version of the Task expires that warnings are reported
-  # See https://conforma.dev/docs/policy/packages/release_trusted_task.html#trusted_task__current
-  task_expiry_warning_days: 14
-
   # https://conforma.dev/docs/policy/packages/release_labels.html#labels__required_labels
   required_labels:
     - name: org.opencontainers.image.revision
